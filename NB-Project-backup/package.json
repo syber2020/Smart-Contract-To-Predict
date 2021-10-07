@@ -1,0 +1,51 @@
+{
+  "name": "testprodnov19",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "@nsl/promised-web3-requestmanager": "^0.2.3",
+    "@types/glob": "^7.1.1",
+    "@types/node": "^10.14.18",
+    "debug": "^4.1.1",
+    "esm": "^3.2.25",
+    "moment": "^2.24.0",
+    "web3x-es": "^4.0.5"
+  },
+  "devDependencies": {
+    "@0x/sol-trace": "^2.0.20",
+    "@teppeis/multimaps": "^1.1.0",
+    "@types/highland": "^2.12.3",
+    "@types/randomstring": "^1.1.6",
+    "async-mutex": "^0.1.4",
+    "csv-parse": "^4.4.7",
+    "highland": "^2.13.5",
+    "truffle": "^5.0.36",
+    "truffle-hdwallet-provider": "^1.0.17",
+    "ts-node": "^8.4.1",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^8.0.1",
+    "tslint-immutable": "^6.0.1",
+    "typedoc": "^0.15.0",
+    "typescript": "^3.7.2",
+    "web3-provider-engine": "^14.2.1",
+    "web3x-codegen": "^4.0.4"
+  },
+  "scripts": {
+    "buildAutomation": "tsc -p tsconfig.automation.json && cp src/networks.json build/",
+    "doAllTheThingsTest": "npm run removeBuild && npm run compileContracts && npm run migrateContracts && npm run generateConfigs && npm run makeTypings",
+    "removeBuild": "rm -rf ./build && rm -rf ./src/typescript/contracts",
+    "build": "tsc -p tsconfig.json && cp src/networks.json build/",
+    "generateConfigs": "node ./make_typings.js ./out/truffle/contracts ./contracts.json ./src/typescript/contracts ./src/networks.json",
+    "makeTypings": "web3x-codegen",
+    "compileContracts": "truffle compile --all",
+    "migrateContracts": "truffle migrate",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
