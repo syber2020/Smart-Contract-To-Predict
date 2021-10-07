@@ -1,0 +1,29 @@
+ echo "@nsl:registry=https://nslgit.cse.unt.edu/nexus/cliaccess/repository/npm-snapshot/" > a.prenpmrc
+ echo "//nslgit.cse.unt.edu/nexus/cliaccess/repository/npm-snapshot/:username=syed" > b.prenpmrc
+ echo "//nslgit.cse.unt.edu/nexus/cliaccess/repository/npm-snapshot/:_password=Q2VEZHRnQndpeV8zNWV4ZkNhU2c=" > c.prenpmrc
+ echo "email=syedbadruddoja@my.unt.edu" > d.prenpmrc
+ echo "always-auth=true" > e.prenpmrc
+ echo "strict-ssl=false" > f.prenpmrc
+ cat *.prenpmrc > .npmrc
+ rm *.prenpmrc
+
+
+
+  @nsl:registry=https://nslgit.cse.unt.edu/nexus/cliaccess/repository/npm-snapshot/
+  //nslgit.cse.unt.edu/nexus/cliaccess/repository/npm-snapshot/:username=syed
+  //nslgit.cse.unt.edu/nexus/cliaccess/repository/npm-snapshot/:_password=Q2VEZHRnQndpeV8zNWV4ZkNhU2c=
+  email=syedbadruddoja@my.unt.edu
+  always-auth=true
+  strict-ssl=false
+
+  
+  
+  
+ echo "@nsl:registry=https://nslgit.cse.unt.edu/nexus/cliaccess/repository/npm-snapshot/" > a.prenpmrc
+ echo "//nslgit.cse.unt.edu/nexus/cliaccess/repository/npm-snapshot/:username=syed" > b.prenpmrc
+ echo "//nslgit.cse.unt.edu/nexus/cliaccess/repository/npm-snapshot/:_password=TXg4clRfM0trZFVzcVh4UjU0TUs=" > c.prenpmrc
+ echo "email=syedbadruddoja@my.unt.edu" > d.prenpmrc
+ echo "always-auth=true" > e.prenpmrc
+ echo "strict-ssl=false" > f.prenpmrc
+ cat *.prenpmrc > .npmrc
+ rm *.prenpmrc
