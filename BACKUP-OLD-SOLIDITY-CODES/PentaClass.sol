@@ -1,4 +1,5 @@
 pragma solidity 0.5.5;
+// for 4 feature and pentaclass
 contract PentaClass{
     int prior1;int prior2;int prior3;int prior4; int P0;int P1;int edenR;int enumR;
    int A0; int A1;int B0; int B1;int C0; int C1;int D0; int D1;int Q;int R;
