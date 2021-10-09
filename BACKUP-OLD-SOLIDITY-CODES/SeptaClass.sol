@@ -1,4 +1,5 @@
 pragma solidity 0.5.5;
+for 4 feature and Septaclass
 contract SeptaClass{
 
     int prior1;int prior2;int prior3;int prior4;int edenR;int enumR;
