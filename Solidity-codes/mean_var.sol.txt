@@ -1,0 +1,22 @@
+pragma solidity 0.6.0;
+
+contract train_NB{
+    int mean; int variance;
+    function get_mean( int[] memory  feature, int n) public{
+    int sum =0; mean =0; 
+    for(uint i =0;i< feature.length; i++){
+        sum = sum+feature[i];
+    }
+    mean = sum / n;
+    }
+    function get_var(int[] memory feature, int m, int n) public{
+    int sum =0;
+    for(uint i=0;i<feature.length;i++){
+        sum = sum + (feature[i]-m)*(feature[i]-m);
+    }
+    variance = sum /n;
+    }
+    function set_mean_var() public returns(int,int){
+        return(mean, variance);
+    }
+}
