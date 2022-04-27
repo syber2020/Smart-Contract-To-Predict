@@ -1,0 +1,112 @@
+pragma solidity 0.5.5;
+// for 4 feature and binary class
+contract AnyClass{
+
+    int edenR;int enumR;
+    int A0; int A1;int B0; int B1;int C0; int C1;int D0; int D1;int Q;int R;
+    int d;int c1;int c2;int c3;int c4;int A;int B;int C;int D; int Y0; int Y1;
+
+     int[] c; 
+
+    function mux(int[] memory v, uint k) public pure returns(int){
+        int x=1;
+        for (uint i =0; i <v.length; i++){
+            if(i==k){ continue;}
+            else{x = x * v[i];}
+        }
+        return x;
+    }
+    function a_getparameters1(
+        int[] memory x,int[] memory v,int[] memory m
+        ) public {
+        A0 = 1;B0=1; D0=1; C0=0;
+        for (uint i =0; i < x.length; i++ )
+        {
+            B0 = B0*v[i];
+            c.push((x[i]-m[i])*(x[i]-m[i]));
+            
+        }
+        for (uint i =0; i< c.length; i++){
+            C0 =C0 + c[i]* mux(v, i); 
+        }
+        D0 = B0;
+        delete c;
+    }
+
+    function a_getparameters2(
+        int[] memory x,int[] memory v,int[] memory m
+        ) public {
+        A1 = 1;B1=1; D1=1; C1=0;
+        for (uint i =0; i < x.length; i++ )
+        {
+            B1 = B1*v[i];
+            c.push((x[i]-m[i])*(x[i]-m[i]));
+            
+        }
+        for (uint i =0; i< c.length; i++){
+            C1 =C1 + c[i]* mux(v, i); 
+        }
+        D1 = B1;
+        delete c;
+    }
+
+    function a_setparameters1() public view returns(int,int,int,int){
+        return(A0,B0,C0,D0);
+    }
+
+    function a_setparameters2() public view returns(int,int,int,int){
+        return(A1,B1,C1,D1);
+    }
+
+// save all the gasussian probability computations for all classes and computer probabilty values
+    
+
+    uint q; uint r; int en = 19; int ed =7; uint num; uint den;  
+    int n1 ; int d1;
+   
+    function get_e_exponent1()public {
+        A = A0*B1;
+        B = B0*A1;
+        C = (C0*D1)-(C1*D0);
+        D = D0*D1;
+        Q = int(C/D);
+        R = C%D;
+        // int Enum=19;
+        // int Eden=7;
+        // edenR = 24*(D*D*D*D);
+        // enumR = 24*D*D*D*D+ R*24*D*D*D+R*R*12*D*D+R*R*R*4*D+R*R*R*R;
+        // if(Q>=0){
+        //     P0 = A*1000*edenR*Prior0*Prior0;
+        //     P1 = B*3000*enumR*Prior1*Prior1;
+        // }else{
+        //     P0 = A*3000*edenR*Prior0*Prior0;
+        //     P1 = B*1000*enumR*Prior1*Prior1;
+        // }
+    }
+    function set_e_exponent1() public view returns(int,int,int,int,int,int){
+        return(A,B,Q,R,C,D);
+    }
+    function get_e_exponent2(int x, int y, uint a, uint b ) public {
+    //    q = x/y;
+    //    r = x%y;
+       q = a/b;
+       r = a%b;
+       if((x/y>0  && x>0 && y>0) || (x/y==0 && x<0 && y<0) || (x/y==0 && x>0 && y>0)||(x/y>0  && x<0 && y<0)){
+         num = 7**q*24*b**4;
+         den = 19**q*(24*b**4+r*24*b**3+12*r**2*b**2+4*b*r**3+b**4);
+       }
+       else {
+         num = 19**q*(24*b**4+r*24*b**3+12*r**2*b**2+4*b*r**3+b**4);
+         den = 7**q*24*b**4;
+       }
+    }
+    function get_comp(int g , int h, int prior0, int prior1) public{
+        Y0 = A * g * prior0*prior0;
+        Y1 = B * h * prior1*prior1;
+    }
+   function set_comp()public view returns(int){
+       if(Y0>Y1) return 0;
+       else return 1;
+   }
+}
+
